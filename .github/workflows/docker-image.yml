@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker_demo:$(date +%s)
+      run: docker build . --file Dockerfile --tag docker_demo:latest
     - name: Push Docker image
-      run: docker tag myapp:latest ${{ env.DOCKER_USERNAME }}/docker_demo:$(date +%s)
+      run: docker tag docker_demo:latest ${{ env.DOCKER_USERNAME }}/docker_demo:latest
            docker push ${{ env.DOCKER_USERNAME }}/myapp:latest
