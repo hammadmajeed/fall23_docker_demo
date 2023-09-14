@@ -22,5 +22,5 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag docker_demo:latest
     - name: Push Docker image
-      run: docker tag docker_demo:latest ${{ secrets.DOCKER_USERNAME }}/docker_demo:latest
+      run: docker tag docker_demo:latest ${{ secrets.DOCKER_USERNAME }}/docker_demo:latest\
            docker push ${{ secrets.DOCKER_USERNAME }}/myapp:latest
